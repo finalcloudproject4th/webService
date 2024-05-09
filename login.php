@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	    $_SESSION['uid'] = $row['uid'];
 	    $_SESSION['id'] = $row['id'];
 	    $_SESSION['password'] = $row['password'];
-	    header("Location: testenroll.php"); // enroll.html 페이지로 이동
+	    header("Location: mypage.php"); // mypage.php 페이지로 이동
 	    exit();
 	} else {
 	    // 로그인 실패

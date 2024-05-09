@@ -11,13 +11,11 @@ rm -rf /var/lib/apt/lists/*
 RUN a2enmod rewrite && service apache2 start
 
 # Copy host file to container
-COPY index.html /var/www/html/
-COPY login.php /var/www/html/
-COPY register.html /var/www/html/
-COPY register.php /var/www/html/
-COPY enroll.php /var/www/html/
+COPY *.html /var/www/html/
+COPY *.php /var/www/html/
 
 # Port Open
+
 EXPOSE 80
 
 # Run Apache2
