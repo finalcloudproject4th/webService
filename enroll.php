@@ -10,7 +10,7 @@
     <p><a href="mypage.php">마이페이지로 가기</a></p>
     <br>
     <h2>Enroll</h2>
-    <form action="enroll.php" method="post">
+    <form action="" method="post"> <!-- search 기능을 현재 페이지에서 처리 -->
         <label for="search">Search:</label>
         <input type="text" id="search" name="search">
         <input type="submit" value="Search">
@@ -19,6 +19,8 @@
     <h3>Available Courses:</h3>
     <ul>
         <?php
+        session_start();
+
         // MySQL 데이터베이스 연결 정보
         $servername = "database-1.cvu4uqwmyddr.ap-northeast-2.rds.amazonaws.com";
         $username = "admin";
@@ -33,10 +35,8 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
-	session_start();
-
         // POST 요청에서 사용자가 입력한 검색어 가져오기
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['search'])) {
             $search = $_POST['search'];
 
             // 사용자가 입력한 검색어를 사용하여 과목을 검색
@@ -51,34 +51,7 @@
             } else {
                 echo "No courses found.";
             }
-	}
-	// POST 요청에서 사용자가 선택한 과목의 고유 id 가져오기
-	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    		if(isset($_POST['cid'])){
-        		$cid = $_POST['cid'];
-
-			// 사용자 uid 가져오기
-			if(isset($_SESSION['uid'])) {
-				$user_id = $_SESSION['uid'];
-
-			// enrollments update
-				$update_enrollments_sql = "INSERT INTO enrollments(user_id, course_id) values ('$user_id', '$cid')";
-				if ($conn->query($update_enrollments_sql) === TRUE) {
-					echo "success";
-					alert("성공!");
-				} else {
-					echo "fail";
-					alert("실패!");
-				}
-			} else {
-				echo "user not logged in";
-			}
-		} else {
-			echo "cid not provided";
-		}
-	}
-			
-
+        }
 
         // MySQL 연결 닫기
         $conn->close();
@@ -88,22 +61,25 @@
         // 수강신청 함수
         function enroll(cid) {
             // 수강신청을 위한 AJAX 요청
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "enroll.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-		    // alert(xhr.responseText);
-                    if (xhr.responseText === "success") {
-                        // alert("수강신청이 완료되었습니다.");
-                        window.location.reload(); // 페이지 새로고침
-		    }
+		var url = '/add_enroll.php?cid='+ encodeURIComponent(cid);
 
-                }
-            };
-            xhr.send("cid=" + cid);
-        }
+		fetch(url)
+       		 .then(response => {
+           	 if (response.ok) {
+                alert('코스가 성공적으로 추가되었습니다.');
+                window.location.reload(); // 페이지 새로고침
+           	 } else {
+               		 throw new Error('코스 추가 중 오류가 발생했습니다.');
+           	 }
+        })
+        .catch(error => {
+            alert(error.message);
+        });
+
+
+	}
     </script>
-
 </body>
 </html>
+
+

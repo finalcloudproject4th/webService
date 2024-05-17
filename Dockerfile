@@ -21,3 +21,4 @@ EXPOSE 80
 # Run Apache2
 CMD ["apache2ctl", "-D", "FOREGROUND"]
 
+

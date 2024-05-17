@@ -26,7 +26,7 @@ if(isset($_SESSION['uid'])){
     $user_info_row = $user_info_result->fetch_assoc();
 
     // 사용자가 수강중인 과목 정보 가져오기
-    $enrollments_sql = "SELECT courses.cname FROM enrollments JOIN courses ON enrollments.course_id = courses.cid WHERE enrollments.user_id='$user_id'";
+    $enrollments_sql = "SELECT courses.cid, courses.cname FROM enrollments JOIN courses ON enrollments.course_id = courses.cid WHERE enrollments.user_id='$user_id'";
     $enrollments_result = $conn->query($enrollments_sql);
 
     // 수강중인 과목 수 계산
@@ -50,11 +50,12 @@ if(isset($_SESSION['uid'])){
         <?php
         // 사용자가 수강중인 각각의 과목에 대한 하이퍼링크 생성
         while($row = $enrollments_result->fetch_assoc()) {
-            echo "<li><a href='course.php?cname=" . urlencode($row["cname"]) . "'>" . $row["cname"] . "</a></li>";
+                echo "<li><a href='course.php?cid=" . $row["cid"] . "'>" . $row["cname"] . "</a></li>";
         }
+
         ?>
     </ul>
-    
+
     <!-- enroll.php로 이동하는 링크 추가 -->
     <p><a href="enroll.php">강의 신청하러 가기</a></p>
 
@@ -65,4 +66,3 @@ if(isset($_SESSION['uid'])){
 // MySQL 연결 닫기
 $conn->close();
 ?>
-

@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password = $_POST['password'];
 
         // ID와 Password 확인 쿼리
-        $sql = "SELECT * FROM users WHERE id='$id' AND password='$password'";
+        $sql = "SELECT * FROM instructors WHERE id='$id' AND password='$password'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -31,8 +31,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $row = $result->fetch_assoc();
             $_SESSION['uid'] = $row['uid'];
             $_SESSION['id'] = $row['id'];
+            $_SESSION['name'] = $row['name'];
             $_SESSION['password'] = $row['password'];
-            header("Location: mypage.php"); // mypage.php 페이지로 이동
+            header("Location: instructorpage.php"); // instructorpage.php 페이지로 이동
             exit();
         } else {
             // 로그인 실패
