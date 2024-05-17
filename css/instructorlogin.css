@@ -1,0 +1,236 @@
+@charset "utf-8";
+* {
+    box-sizing: border-box;
+}
+html, body, form, a {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    text-decoration: none;
+    color: #000;
+}
+/*------wrap-----*/
+#wrap {
+    text-align: center;
+}
+/*------wrap-center-----*/
+#wrap-center {
+    width: 2500px;
+    margin: 0 auto;
+    display: inline;
+    
+}
+/*------header-----*/
+.header {
+    height: 100px;
+    position: relative;
+    text-align: left;
+}
+
+#h-logo img {  
+    width: 150px;
+    margin: 10px 10px 0 0;
+    text-align: left;
+}
+/*------login-----*/
+#top {
+    margin-bottom: 20px;
+}
+#top ul {
+    display: flex;
+    list-style: none;
+    justify-content: right;
+    line-height: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-right: 30px;
+    white-space: nowrap;
+}
+#top a:link {
+    text-decoration: none;
+    text-align: center;
+    color: #000;
+}
+#top a:visited {
+    color: #000;
+}
+#top li {
+    width: 80px;
+    margin-left: 20px;
+}
+#top li:nth-child(3) {
+    width: 64px;
+}
+
+
+/*------main-----*/
+#main {
+    height: 85vh;
+    position: relative;
+    margin-top: 50px;
+}
+.login-wrapper{
+    width: 450px;
+    height: 350px;
+    padding: 40px;
+    margin: 0 auto;
+    
+    position: absolute;
+    top: 25%;
+    left: 42%;
+    margin: -25px 0 0 -25px;
+}
+
+.login-wrapper > h2{
+    font-size: 24px;
+    color: rgb(71, 117, 241);
+    margin-bottom: 20px;
+}
+#login-form > input{
+    width: 100%;
+    height: 48px;
+    padding: 0 10px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    background-color: #F8F8F8;
+}
+
+#login-form > input::placeholder{
+    color: #D2D2D2;
+    font-size: 1.2rem;
+}
+#login-form > input[type="submit"]{
+    color: #fff;
+    font-size: 16px;
+    background-color: rgb(71, 117, 241);
+    margin-top: 20px;
+}
+#login-form > input[type="submit"]:hover {
+    background-color: rgb(25, 69, 189);
+    transition: 0.5s;
+}
+
+#login-form > input[type="checkbox"]{
+    display: none;
+}
+#login-form > label{
+    color: #999999;
+    position: relative;
+    right: 110px;
+}
+#login-form input[type="checkbox"] + label{
+    cursor: pointer;
+    padding-left: 26px;
+    background-image: url("checkbox.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#login-form input[type="checkbox"]:checked + label{
+    background-image: url("checkbox-active.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#main p {
+   line-height: 30px;
+   font-weight: 500;
+}
+#main p:last-child {
+    margin-top: 20px;
+}
+
+/*------footer
+.footer {
+    width: 100%;
+    
+    margin-top: 200px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background: rgb(92, 92, 92);
+    color: #fff;
+}
+
+.footer h4 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+.footer img {
+    width: 150px;
+    padding-bottom: 30px;
+    padding-right: 40px;
+}
+#footer-top {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 32px 20px;
+    border-bottom: 1px solid #444;
+    margin-bottom: 30px;
+    width: 1200px;
+    margin: 0 auto;
+}
+#list_title {
+    font-size: 1rem;
+    text-align: center;
+}
+
+#menu_list {
+    margin-right: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    white-space: pre-line;
+    text-align: left;
+}
+#menu_list > a:link {
+    text-decoration: none;
+    color: #000;
+    line-height: 25px;
+}
+#menu_list > a:visited,a:active {
+    color: #000;
+}
+
+.footer #footer-bottom {
+    display: flex;
+    justify-content: center;
+    padding: 32px 20px;
+    margin-bottom: 30px;
+    width: 1200px;
+    margin: 0 auto;
+
+    padding: 0 30px 0 30px;
+    word-spacing:2px;
+    line-height: 20px;
+    margin-top: 40px;
+}
+#footer-bottom a:link {
+    font-size: small;
+    color: #fff;
+    text-decoration: none;
+}
+#footer-bottom a:visited {
+    color: #fff;
+}
+#ad_info {
+    text-align: left;
+    line-height: 30px;
+}
+#f-logo {
+    justify-content: center;
+}
+
+.icons {
+    padding-right: 30px;
+}
+.icons .fab{
+    float: right;
+    margin: 0 13px;
+    cursor: pointer;
+    padding-right: 10px 0;
+}
+.icons a {
+    color: #fff;
+}
+.icons a:hover {
+    color: #157fc5;
+}
+-----*/
