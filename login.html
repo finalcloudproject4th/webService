@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="shortcut icon" href="./images/fav/192.png">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>로그인</title>
+</head>
+<body>
+    <div id="wrap">
+        <div id="wrap-center">
+            <!--header-->    
+            <div class="header">
+                <div id="top">
+                    <a id="h-logo" href="index.html"><img src="images/logo.png" alt="logo"></a>
+                    <ul>
+                        <li><a href="login.html">회원로그인  |</a></li>
+                        <li><a href="instructorlogin.html">강사로그인</a></li>
+                        <li><a href="register.html">회원가입</a></li>
+                        <li><a href="mypage.php">마이페이지</a></li>
+                    </ul>
+                </div>
+            </div>
+                      
+                        
+            <div id="main">
+                <div class="login-wrapper">
+                    <h2 style="font-size: 2rem;">Login</h2>
+                    <form method="post" action="login.php" id="login-form">
+                        <input type="text" id="id" name="id" placeholder="ID" required>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <label for="remember-check">
+                            <input type="checkbox" id="remember-check">아이디 저장하기
+                        </label>
+                        <input type="submit" value="Login">
+                    </form>
+                    <p>아직 회원이 아니세요?<br> <a href="register.html" style="font-weight: 600;">회원가입</a>을 클릭하여 회원가입하세요.</p>
+                    <p><a href="index.html" style="font-weight: 600;">메인으로 돌아가기</a></p>
+                </div>
+            </div>
+            
+            <!--footer
+            <footer class="footer">
+                <div id="footer-top">
+                    <div id="menu_list">
+                        <div id="list_title">클래스랩</div>
+                        <a href="#" class="list_link">클래스랩 소개</a>
+                        <a href="#" class="list_link">수강평 모아보기</a>
+                        <a href="#" class="list_link">블로그</a>
+                    </div>
+                    <div id="menu_list">
+                        <div id="list_title">패밀리 사이트</div>
+                        <a href="#" class="list_link">추가 중</a>
+                        <a href="#" class="list_link">추가 중</a>
+                        <a href="#" class="list_link">추가 중</a>
+                        <a href="#" class="list_link">추가 중</a>
+                        <a href="#" class="list_link">추가 중</a>
+                    </div>
+                    <div id="menu_list">
+                        <div id="list_title">서비스</div>
+                        <a href="#" class="list_link">기업 교육</a>
+                        <a href="#" class="list_link">멘토링</a>
+                        <a href="#" class="list_link">제휴</a>
+                    </div>
+                    <div id="menu_list">
+                        <div id="list_title">고객센터</div>
+                        <a href="#" class="list_link">공지사항</a>
+                        <a href="#" class="list_link">자주묻는 질문</a>
+                        <a href="#" class="list_link">신고센터</a>
+                        <a href="#" class="list_link">수료증 확인</a>
+                        <a href="#" class="list_link">강의 요청</a>
+                    </div>
+                </div>
+
+                <address id="footer-bottom">
+                    <a id="f-logo" href="index.html"><img src="images/footer_logo.png" alt="f-logo"></a>
+                    <div id="ad_info">
+                        (주)클래스랩 | 대표자: ㅇㅇㅇ | 사업자번호: 000-00-00000 <a href="#">[사업자정보확인]</a><br>
+                        통신판매업: 2024-대한민국B-0000 | 개인정보보호책임자: ㅇㅇㅇ | 이메일: info@classlab<br>
+                        전화번호: 070-0000-0000 | 주소: 경기도 ㅇㅇ ㅇㅇ구 ㅇㅇ로123번길 10 2동 3층<br>
+                        ©CLASSLAB. ALL RIGHTS RESERVED
+                    </div>
+                </address>
+                <div class="icons">
+                    <a href="" target="_blank">
+                    <i class="fab fa-instagram"></i></a>
+                    <a href="" target="_blank">
+                    <i class="fab fa-facebook-square"></i></a>
+                    <a href="" target="_blank">
+                    <i class="fab fa-brands fa-square-x-twitter"></i>
+                    <a href="" target="_blank">
+                    <i class="fab fa-youtube-square"></i></a>
+                </div>
+            </footer>
+            -->
+        </div>
+    </div>
+</body>
+</html>
+

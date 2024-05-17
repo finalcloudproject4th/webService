@@ -48,10 +48,10 @@ if(isset($_SESSION['uid'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./images/fav/192.png">
     <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/mypage.css">
+    <link rel="stylesheet" href="./css/mycourse.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>마이페이지</title>
+    <title>나의 수강 강의</title>
 </head>
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <body>
@@ -90,17 +90,21 @@ if(isset($_SESSION['uid'])){
                 <section class="side_menu">
                     <ul class="menu">
                         <li><a href="#">내 정보 변경</a></li>
-                        <li><a href="mycourse.php">내 강의</a></li>
+                        <li><a href="mycourse.php">나의 수강 강의</a></li>
                     </ul>
                 </section>
+
                 <div class="content">
-                    <div class="pic">
-                        <img src="images/user_img.png" alt="my img">
-                    </div>
-                    <table class="tb" width = 600 height = 200 align = "center" border="1">
-                        <tr><td width="200">ID</td><td width="400"><?php echo $user_info_row['id']; ?></td></tr>
-                        <tr><td width="200">수강과목 수</td><td width="400"><a href="mycourse.html"><?php echo $num_courses; ?></a></td></tr>
-                    </table>
+                <p>수강중인 과목</p>
+                <ul>
+                    <?php
+                    // 사용자가 수강중인 각각의 과목에 대한 하이퍼링크 생성
+                    while($row = $enrollments_result->fetch_assoc()) {
+                            echo "<li><a href='course.php?cid=" . $row["cid"] . "'>" . $row["cname"] . "</a></li>";
+                    }
+
+                    ?>
+                </ul>
                 </div>
                 <!-- enroll.php로 이동하는 링크 추가 -->
                 <div id="enroll">
